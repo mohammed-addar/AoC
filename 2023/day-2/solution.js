@@ -1,6 +1,7 @@
 const fs = require('fs');
 const fileDir = "in.txt";
 
+//solution of part 1
 const max = {
     red: 12,
     green: 13,
@@ -30,3 +31,27 @@ const contents = fs.readFileSync(fileDir, 'utf8').split('\n').reduce((acc, line)
 }, []);
 
 console.log(contents.reduce((acc, gameId) => acc + gameId, 0));
+
+//solution of part 2
+const contents2 = fs.readFileSync(fileDir, 'utf8').split('\n').reduce((acc, line) => {
+    if (line === "") {
+        return acc;
+    }
+    const max = {
+        red: 0,
+        green: 0,
+        blue: 0,
+    }
+    line.split(":")[1].split(";").forEach(game => {
+        game.split(",").forEach(dice => {
+            const color = dice.trim().split(" ")[1];
+            const count = +dice.trim().split(" ")[0];
+            max[color] = Math.max(max[color], count);
+        });
+    });
+    
+    return max['red'] * max['blue'] * max['green'] + acc;
+
+}, 0);
+
+console.log(contents2);
