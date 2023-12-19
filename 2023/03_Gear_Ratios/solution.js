@@ -104,6 +104,4 @@ for (let y= 0; y < contents.length; y++) {
 	}, 0);
 }
 
-
-
 console.log("part2 sum2: ", sum2);
