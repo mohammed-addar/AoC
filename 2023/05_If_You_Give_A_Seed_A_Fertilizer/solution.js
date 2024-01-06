@@ -38,4 +38,17 @@ function part1() {
 console.log("part 1 solution: ");
 part1()
 
+//part 2
 
+const seedsValue = contents.shift().split(": ")[1].split(" ");
+
+const seeds = [];
+
+for (let i = 0; i < seedsValue.length; i += 2) {
+	seeds.push({
+		start: +seedsValue[i],
+		length: +seedsValue[i + 1],
+	});
+}
+
+console.log(seeds)
