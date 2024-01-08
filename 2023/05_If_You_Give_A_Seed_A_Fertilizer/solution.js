@@ -1,7 +1,6 @@
 const fs = require('fs');
 const fileName = "in_demo.txt";
 const contents = fs.readFileSync(fileName, 'utf8').split("\n\n");
-<<<<<<< HEAD
 
 function part1() {
 	const mapXtoY = (mapping, X) => {
@@ -53,9 +52,8 @@ for (let i = 0; i < seedsValue.length; i += 2) {
 }
 
 console.log(seeds)
-=======
 
-function part1() {
+function part2() {
 	const mapXtoY = (mapping, X) => {
 		let Y = -1;
 		for (const row of mapping) {
@@ -88,8 +86,7 @@ function part1() {
 		
 	console.log(Math.min(...res));
 }
-console.log("part 1 solution: ");
-part1()
+console.log("part 2 solution: ");
+part2()
 
 
->>>>>>> e38af7483632fca68c79a2c5c0e2da31fb870368
